@@ -54,13 +54,19 @@ In the following image, you can see an example Docker command from Docker Hub. T
 
 2. Sign in to Docker Hub using the command `docker login -u YOUR-USER-NAME`.
 
-3. Use the `docker tag` command to give the `getting-started` image a new name. Replace `YOUR-USER-NAME` with your Docker ID.
+   > [!NOTE]
+   > If you encounter error `denied: requested access to the resource is denied`, you can try re-login with
+   ```console
+   docker login -u "myusername" -p "mypassword" docker.io
+   ```
+
+4. Use the `docker tag` command to give the `getting-started` image a new name. Replace `YOUR-USER-NAME` with your Docker ID.
 
    ```console
    $ docker tag getting-started YOUR-USER-NAME/getting-started
    ```
 
-4. Now run the `docker push` command again. If you're copying the value from
+5. Now run the `docker push` command again. If you're copying the value from
    Docker Hub, you can drop the `tagname` part, as you didn't add a tag to the
    image name. If you don't specify a tag, Docker uses a tag called `latest`.
 
